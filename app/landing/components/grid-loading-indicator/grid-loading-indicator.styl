@@ -1,0 +1,28 @@
+@import '~common/styles/color-palette.styl'
+
+.grid-loading-indicator
+    display flex
+    justify-content: center
+    align-items center
+
+    .square
+        animation wave .7s infinite linear
+        color colored-border
+        padding 0 1em
+
+        &.square-0
+            animation-delay 0
+        &.square-1
+            animation-delay 70ms
+        &.square-2
+            animation-delay 140ms
+
+@keyframes wave
+    0%
+        transform translateY(0)
+    25%
+        transform translateY(-50%)
+    75%
+        transform translateY(50%)
+    100%
+        transform translateY(0)

@@ -1,0 +1,23 @@
+.grid
+    overflow auto
+
+    .grid-canvas
+        display flex
+        flex-flow row wrap
+
+        .grid-item
+            flex-grow 1
+        .grid-loading-indicator
+            flex-grow 1
+            width 30%
+
+    &.-single
+        .grid-item
+            width 90%
+
+    &.-multi
+        .grid-item
+            width 30%
+
+    .grid-error
+        margin 1em

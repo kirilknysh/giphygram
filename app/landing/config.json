@@ -1,0 +1,11 @@
+{
+    "giphy": {
+        "base": "http://api.giphy.com/v1/gifs/search",
+        "apiKey": "CdRKiCMbTnt9CkZTZ0lGukSczk6iT4Z6",
+        "limit": 10,
+        "params": {
+            "rating": "G",
+            "lang": "en"
+        }
+    }
+}

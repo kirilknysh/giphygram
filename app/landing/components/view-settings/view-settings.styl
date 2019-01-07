@@ -1,0 +1,18 @@
+@import '~common/styles/color-palette.styl'
+
+.view-settings
+    display flex
+    justify-content flex-end
+
+    .view-toggler
+        width 3em
+        height 3em
+        outline 0
+        background none
+        border 1px solid colored-border
+        transform rotate(0deg)
+        transition transform 300ms ease-in-out
+
+        &.-single
+            transform rotate(90deg)
+

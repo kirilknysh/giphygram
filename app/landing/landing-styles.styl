@@ -1,0 +1,30 @@
+@import '~common/styles/color-palette.styl'
+
+html
+    min-height 100%
+    overflow hidden
+
+.landing-root
+    font-family Helvetica Neue, Helvetica, Arial, sans-serif
+    display flex
+    flex-flow column nowrap
+    height 100vh
+
+    header
+        background header-background
+        padding 1em
+        color header-text-color
+        border-bottom 1px solid colored-border
+
+    .settings
+        display flex
+        justify-content space-between
+        border-bottom 1px solid colored-border
+        padding .5em 1em
+        flex-shrink 0
+
+        .query-input-container
+            width 30vw
+
+    .grid
+        flex-grow 2
