@@ -506,7 +506,7 @@ function renderError(error) {
   }
 
   return Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])(_grid_error_grid_error__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    message: error
+    message: error.message
   });
 }
 
@@ -1044,7 +1044,7 @@ function appendItems(state, items) {
 
 function handleError(state, error) {
   return Object.assign({}, state, {
-    error: error.message
+    error: error
   });
 }
 
@@ -1054,7 +1054,7 @@ function viewState() {
 
   switch (action.type) {
     case _actions_data_fetch_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ITEMS"]:
-      return clearItems(state, action.payload);
+      return clearItems(state);
 
     case _actions_data_fetch_actions__WEBPACK_IMPORTED_MODULE_0__["APPEND_ITEMS"]:
       return appendItems(state, action.payload);
