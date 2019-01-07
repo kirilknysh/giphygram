@@ -1,13 +1,13 @@
 import { h } from 'preact';
 
 import './grid-item.styl';
-// {/* <img src={image} /> */}
-export default function GridItem({ image, fallback }) {
+
+export default function GridItem({ item }) {
     return (
-        <div className="grid-item">
+        <div className="grid-item" style={{ height: `${item.height}px` }}>
             <picture>
-                <source type="image/webp" srcset={image} />
-                <img src={fallback} />
+                <source type="image/webp" srcset={item.href} />
+                <img src={item.fallback} />
             </picture>
         </div>
     );

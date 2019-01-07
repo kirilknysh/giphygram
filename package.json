@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.dev.js",
-    "build:prod": "webpack --config webpack.config.prod.js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && webpack --config webpack.config.dev.js",
+    "clean:prod": "rm -rf dist-prod",
+    "build:prod": "npm run clean:prod && webpack --config webpack.config.prod.js",
+    "build:all": "npm run build && npm run build:prod",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "lint:js": "eslint ./app --ignore-pattern .gitignore",

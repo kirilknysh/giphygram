@@ -13,7 +13,7 @@ import './grid.styl';
 
 function renderGridItems(items, multiColumn) {
     return items.map((item, index) => (
-        <GridItem key={index} image={multiColumn ? item.small : item.large} fallback={multiColumn ? item.smallFallback : item.largeFallback} />
+        <GridItem key={index} item={multiColumn ? item.small : item.large} />
     ));
 }
 
