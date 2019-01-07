@@ -15,7 +15,9 @@
 3. `npm start`
 4. open `http://localhost:3000/` in your browser
 
-Linting (JS and styles) is run on every commit hook. Unit tests are run on every push.
+Linting (JS and styles) is run on every commit hook. To run linter manually execute `npm run lint`.
+
+Unit tests are run on every push. To run tests manually execute `npm t`, watch mode - `npm run test:watch`.
 
 For easier debugging redux store is exposed in **development** mode under `window.store`. Also redux-logger middleware logs every redux action.
 
@@ -58,4 +60,5 @@ Can't 100% trust to open-source. Unfortunately, not all open-source projects fol
 8. Dynamic configuration: currently configuration is embedded into the bundle. Could be more dynamic (ideally, grabbed from some server endpoint);
 9. Better logging: at least data fetch errors could be sent to some remote server for analysis;
 10. Better fetching algorithm: "obsolete" requests (for previous query) should be cancelled;
-11. Better state management: to make the application moree performant - some additional libraries may be used (like [reselect](https://github.com/reduxjs/reselect), [Immutable.js](https://github.com/facebook/immutable-js)). Though, for such a small application may be an overkill.
+11. Better state management: to make the application moree performant - some additional libraries may be used (like [reselect](https://github.com/reduxjs/reselect), [Immutable.js](https://github.com/facebook/immutable-js)). Though, for such a small application may be an overkill;
+12. Add more tests (unit, UI, ...);

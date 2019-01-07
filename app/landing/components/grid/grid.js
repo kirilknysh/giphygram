@@ -23,7 +23,7 @@ function renderError(error) {
         return null;
     }
 
-    return (<GridError message={error} />);
+    return (<GridError message={error.message} />);
 }
 
 function getGridClasses(multiColumn, itemsCount) {

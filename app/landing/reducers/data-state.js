@@ -24,14 +24,14 @@ function appendItems(state, items) {
 
 function handleError(state, error) {
     return Object.assign({}, state, {
-        error: error.message,
+        error,
     });
 }
 
 export default function viewState(state = defaultState, action) {
     switch(action.type) {
         case CLEAR_ITEMS:
-            return clearItems(state, action.payload);
+            return clearItems(state);
         case APPEND_ITEMS:
             return appendItems(state, action.payload);
         case FETCH_ERROR:
