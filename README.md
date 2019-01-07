@@ -1,5 +1,10 @@
 # giphygram
 
+## Demo
+[development](https://kirilknysh.github.io/giphygram/dist/) version
+
+[production](https://kirilknysh.github.io/giphygram/dist-prod/) version
+
 ## Prerequisite
 1. Install git, node (v8.x.x+) + npm;
 2. Install editorconfig into IDE;
