@@ -21,10 +21,18 @@ function buildUrl(query, page) {
 function convertAsset(asset) {
     return {
         type: asset.type,
-        small: asset.images.fixed_height.webp,
-        smallFallback: asset.images.fixed_height.url,
-        large: asset.images.original.webp,
-        largeFallback: asset.images.original.url,
+        small: {
+            href: asset.images.fixed_height.webp,
+            fallback: asset.images.fixed_height.url,
+            width: asset.images.fixed_height.width,
+            height: asset.images.fixed_height.height,
+        },
+        large: {
+            href: asset.images.original.webp,
+            fallback: asset.images.original.url,
+            width: asset.images.original.width,
+            height: asset.images.original.height,
+        },
     };
 }
 
