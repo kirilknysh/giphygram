@@ -328,18 +328,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _grid_item_styl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./grid-item.styl */ "./app/landing/components/grid-item/grid-item.styl");
 /* harmony import */ var _grid_item_styl__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_grid_item_styl__WEBPACK_IMPORTED_MODULE_1__);
 
- // {/* <img src={image} /> */}
 
 function GridItem(_ref) {
-  var image = _ref.image,
-      fallback = _ref.fallback;
+  var item = _ref.item;
   return Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
-    className: "grid-item"
+    className: "grid-item",
+    style: {
+      height: "".concat(item.height, "px")
+    }
   }, Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("picture", null, Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("source", {
     type: "image/webp",
-    srcset: image
+    srcset: item.href
   }), Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("img", {
-    src: fallback
+    src: item.fallback
   })));
 }
 
@@ -493,8 +494,7 @@ function renderGridItems(items, multiColumn) {
   return items.map(function (item, index) {
     return Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])(_grid_item_grid_item__WEBPACK_IMPORTED_MODULE_5__["default"], {
       key: index,
-      image: multiColumn ? item.small : item.large,
-      fallback: multiColumn ? item.smallFallback : item.largeFallback
+      item: multiColumn ? item.small : item.large
     });
   });
 }
@@ -1209,10 +1209,18 @@ function buildUrl(query, page) {
 function convertAsset(asset) {
   return {
     type: asset.type,
-    small: asset.images.fixed_height.webp,
-    smallFallback: asset.images.fixed_height.url,
-    large: asset.images.original.webp,
-    largeFallback: asset.images.original.url
+    small: {
+      href: asset.images.fixed_height.webp,
+      fallback: asset.images.fixed_height.url,
+      width: asset.images.fixed_height.width,
+      height: asset.images.fixed_height.height
+    },
+    large: {
+      href: asset.images.original.webp,
+      fallback: asset.images.original.url,
+      width: asset.images.original.width,
+      height: asset.images.original.height
+    }
   };
 }
 
