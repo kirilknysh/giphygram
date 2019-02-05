@@ -1,9 +1,15 @@
 workflow "unit tests" {
   on = "push"
-  resolves = ["GitHub Action for npm"]
+  resolves = ["run tests"]
 }
 
-action "GitHub Action for npm" {
+action "install deps" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
-  runs = "npm run test"
+  args = "ci"
+}
+
+action "run tests" {
+  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  args = "test"
+  needs = ["install deps"]
 }
