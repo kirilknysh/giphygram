@@ -1,4 +1,4 @@
-import { QUERY_CHANGE, REQUEST_NEXT_PAGE } from '../actions/query-actions';
+import { QUERY_CHANGE, REQUEST_NEXT_PAGE, HASH_CHANGE } from '../actions/query-actions';
 import { appendItems, clearItems, fetchError } from '../actions/data-fetch-actions';
 
 import { fetchData } from '../services/giphy-service';
@@ -37,7 +37,9 @@ function handleNextPageRequest(dispatch, getState) {
 
 function handleAction(action, dispatch, getState) {
     switch (action.type) {
-        case QUERY_CHANGE:
+        // case QUERY_CHANGE:
+        //     return handleQueryChange(dispatch, getState);
+        case HASH_CHANGE:
             return handleQueryChange(dispatch, getState);
         case REQUEST_NEXT_PAGE:
             return handleNextPageRequest(dispatch, getState);
